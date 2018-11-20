@@ -12,6 +12,8 @@ class TasksController < ApplicationController
     if customer
       @tasks = Task.where(customer_id: customer) 
     end
+
+
   end
 
   def new
