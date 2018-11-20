@@ -20,6 +20,8 @@ class CustomersController < ApplicationController
                              state: params[:state],
                              zip: params[:zip])
     @customer.save
+
+    redirect_to "/customers/#{@customer.id}"
   end
 
   def show

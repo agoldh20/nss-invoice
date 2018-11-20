@@ -1,1 +1,9 @@
-index.html.erb
+<% @customers.each do |customer| %>
+  <div>
+    <strong><a href="/customers/<%= customer.id %>"><%= customer.last_name %>, <%= customer.first_name %></a></strong>
+  </div>
+  <div>
+    <%= customer.index_address %>
+  </div>
+  <br>
+<% end %>

@@ -1,1 +1,26 @@
-new.html.erb
+<%= form_tag "/customers", method: :post do %>
+  <div>
+    <input type="text" name="first_name" placeholder="First Name">
+    <input type="text" name="last_name" placeholder="Last Name">
+  </div>
+  <br>
+  <div>
+    <input type="text" name="email" placeholder="Email">
+    <input type="text" name="home_phone" placeholder="Home Phone">
+    <input type="text" name="cell_phone" placeholder="Cell Phone">
+  </div>
+  <br>
+  <div>
+    <input type="text" name="street_number" placeholder="Street Number">
+    <input type="text" name="street_name" placeholder="Street Name">
+  </div>
+  <div>
+    <input type="text" name="city" placeholder="City">
+    <input type="text" name="state" placeholder="State">
+    <input type="text" name="zip" placeholder="Zip">
+  </div>
+  <br>
+  <div>
+    <input type="submit" value="Add Customer">
+  </div>
+<% end %>

@@ -1,6 +1,10 @@
 class TasksController < ApplicationController
   def index
     @tasks = Task.all
+
+    invoice = params[:invoice]
+
+    @tasks = 
   end
 
   def new
