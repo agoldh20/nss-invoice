@@ -3,8 +3,15 @@ class TasksController < ApplicationController
     @tasks = Task.all
 
     invoice = params[:invoice]
+    customer = params[:customer]
 
-    @tasks = 
+    if invoice
+      @tasks = Task.where(invoice_id: invoice)
+    end
+
+    if customer
+      @tasks = Task.where(customer_id: customer) 
+    end
   end
 
   def new
@@ -17,9 +24,13 @@ class TasksController < ApplicationController
                      size: params[:size],
                      info: params[:info],
                      price_per_sqft: params[:price_per_sqft],
-                     line_total: params[:line_total]
+                     line_total: params[:line_total],
+                     invoice_id: params[:invoice_id],
+                     status: "open"
                      )
     @task.save
+
+    redirect_to "/tasks/?invoice=#{params[:invoice_id]}"
   end
 
   def show
@@ -44,5 +55,7 @@ class TasksController < ApplicationController
 
   def destroy
     @task = Task.find(params[:id])
+    @task.destroy
+    redirect_to "/tasks/?invoice=#{@task.invoice_id}"
   end
 end

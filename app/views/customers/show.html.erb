@@ -1,7 +1,10 @@
 <h1><%= @customer.first_name %> <%= @customer.last_name %></h1>
 <h3><%= @customer.index_address %></h3>
 
-<%= form_tag "/invoices", method: :post do %>
-  <input type="hidden" name="customer_id" value="<%= @customer_id %>">
-  <input type="submit" value="Create New Job">
-<% end %>
+<div>
+  <%= form_tag "/invoices", method: :post do %>
+    <input type="hidden" name="customer_id" value="<%= @customer.id %>">
+    <input type="submit" value="Create New Job">
+  <% end %>
+  <%= button_to "View Previous Work", "/tasks/", method: :get, params: {customer: @customer.id} %>
+</div>

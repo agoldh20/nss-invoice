@@ -1,0 +1,14 @@
+<ul>
+  <% @tasks.each do |task| %>
+    <li>Room:<%= task.room %> Info:<%= task.info %> Size:<%= task.size %> $$/SqFt:<%= task.price_per_sqft %> Line Total:<%= task.line_total %>- <%= link_to "Remove Line", "/tasks/#{ task.id }", method: :delete %></li>
+  <% end %>
+</ul>
+<%= form_tag "/tasks", method: :post do %>
+  <input type="hidden" name="invoice_id" value="<%= params[:invoice] %>">
+  <input type="text" name="room" placeholder="Room" size="10">
+  <input type="text" name="info" placeholder="Info" size="55">
+  <input type="text" name="size" placeholder="Size" size="10">
+  <input type="text" name="price_per_sqft" placeholder="$$/Sqft" size="6">
+  <input type="text" name="line_total" placeholder="Line Total" size="6">
+  <input type="submit" value="Add Line">
+<% end %>

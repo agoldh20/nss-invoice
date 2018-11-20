@@ -17,6 +17,8 @@ class InvoicesController < ApplicationController
                            tax: params[:tax],
                            total: params[:total]
                            )
+    @invoice.save
+    
     redirect_to "/tasks/?invoice=#{@invoice.id}"
   end
 
