@@ -10,3 +10,5 @@
         <%= "LINE TOTAL: $#{task.line_total}" unless task.line_total.empty? %></li>
   <% end %>
 </ul>
+
+<strong><h2>TOTAL: $<%= @invoice.total_price %></h2></strong>

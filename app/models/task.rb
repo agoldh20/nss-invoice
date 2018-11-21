@@ -2,8 +2,6 @@ class Task < ApplicationRecord
   belongs_to :invoice
 
   def total_price
-    current_invoice = Task.where(invoice_id: params[:invoice])
-    total = @tasks.pluck(:line_total).reduce(:+)
-    total
+    invoices.all.pluck(:line_total).map { |total| total.to_i }.reduce(:+)
   end
 end
