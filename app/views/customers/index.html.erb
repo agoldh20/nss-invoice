@@ -1,3 +1,7 @@
+<div>
+  <a href="/customers/new">New Customer</a>
+</div>
+<br>
 <% @customers.each do |customer| %>
   <div>
     <strong><a href="/customers/<%= customer.id %>"><%= customer.last_name %>, <%= customer.first_name %></a></strong>

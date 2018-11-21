@@ -13,7 +13,6 @@ class TasksController < ApplicationController
       @tasks = Task.where(customer_id: customer) 
     end
 
-
   end
 
   def new
@@ -27,8 +26,7 @@ class TasksController < ApplicationController
                      info: params[:info],
                      price_per_sqft: params[:price_per_sqft],
                      line_total: params[:line_total],
-                     invoice_id: params[:invoice_id],
-                     status: "open"
+                     invoice_id: params[:invoice_id]
                      )
     @task.save
 

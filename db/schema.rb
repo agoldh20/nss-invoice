@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_20_203401) do
+ActiveRecord::Schema.define(version: 2018_11_20_230113) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 2018_11_20_203401) do
     t.integer "subtotal"
     t.integer "tax"
     t.integer "total"
+    t.string "status"
   end
 
   create_table "tasks", force: :cascade do |t|
@@ -50,7 +51,6 @@ ActiveRecord::Schema.define(version: 2018_11_20_203401) do
     t.datetime "updated_at", null: false
     t.string "size"
     t.string "line_total"
-    t.string "status"
   end
 
   create_table "users", force: :cascade do |t|

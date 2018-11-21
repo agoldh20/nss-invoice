@@ -1,0 +1,3 @@
+<% @invoices.each do |invoice| %>
+  <strong><a href="/tasks/?invoice=<%= invoice.id %>"><%= invoice.id %></a></strong>
+<% end %>

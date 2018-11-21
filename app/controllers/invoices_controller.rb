@@ -2,7 +2,12 @@ class InvoicesController < ApplicationController
   def index
     @invoices = Invoice.all
 
+    open_status = params[:status]
+    customer_id = params[:customer]
 
+    if open_status && customer_id
+      @invoices = Invoice.where(status: open_status, customer_id: customer_id) 
+    end
   end
 
   def new

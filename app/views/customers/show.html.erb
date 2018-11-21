@@ -7,7 +7,7 @@
     <input type="submit" value="Create New Job">
   <% end %>
   <br>
-  <%= button_to "Show Open Job", "/tasks/", method: :get, params: {customer: @customer.id} %>
+  <%= button_to "Show Current Invoices", "/invoices/", method: :get, params: {status: "open", customer: @customer.id} %>
   <br>
   <%= button_to "View Previous Work", "/tasks/", method: :get, params: {customer: @customer.id} %>
 </div>
