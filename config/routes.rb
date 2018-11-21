@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get '/' => 'customers#index'
   get '/customers' => 'customers#index'
   get '/customers/new' => 'customers#new'
   post '/customers' => 'customers#create'

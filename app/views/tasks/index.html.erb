@@ -1,10 +1,10 @@
 <ul>
   <% @tasks.each do |task| %>
-    <li><%= "Room: #{task.room}," unless task.room.empty? %>
-        <%= "Info: #{task.info}," unless task.info.empty? %>
-        <%= "Size: #{task.size}," unless task.size.empty? %>
-        <%= "Price: $ #{task.price_per_sqft}," unless task.price_per_sqft.empty? %>
-        <%= "Line Total: $ #{task.line_total}" unless task.line_total.empty? %>--- <%= link_to "Remove Line", "/tasks/#{ task.id }", method: :delete %></li>
+    <li><%= "ROOM: #{task.room}," unless task.room.empty? %>
+        <%= "INFO: #{task.info}," unless task.info.empty? %>
+        <%= "SIZE: #{task.size}," unless task.size.empty? %>
+        <%= "PRICE: $#{task.price_per_sqft}," unless task.price_per_sqft.empty? %>
+        <%= "LINE TOTAL: $#{task.line_total}" unless task.line_total.empty? %>--- <%= link_to "Remove Line", "/tasks/#{ task.id }", method: :delete %></li>
   <% end %>
 </ul>
 <div>
@@ -20,8 +20,9 @@
 </div>
 <br>
 <div>
-  <h2>TOTAL: <%= @tasks.total_price %>
+  <strong>TOTAL: <%= task.total_price %></strong>
 </div>
+<br>
 <div>
-  <%= button_to "Invoice Job" %>
+  <%= button_to "Invoice Job", "/invoices/#{params[:invoice]}", method: :get %>
 </div>

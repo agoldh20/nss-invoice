@@ -20,7 +20,8 @@ class InvoicesController < ApplicationController
                            notes: params[:notes],
                            subtotal: params[:subtotal],
                            tax: params[:tax],
-                           total: params[:total]
+                           total: params[:total],
+                           status: "open"
                            )
     @invoice.save
     

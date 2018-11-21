@@ -1,1 +1,12 @@
-show.html.erb
+<h1><%= @invoice.customer.full_name %></h1>
+<h2><%= @invoice.customer.index_address %></h2>
+
+<ul>
+  <% @invoice.tasks.each do |task| %>
+    <li><%= "ROOM: #{task.room}," unless task.room.empty? %>
+        <%= "INFO: #{task.info}," unless task.info.empty? %>
+        <%= "SIZE: #{task.size}," unless task.size.empty? %>
+        <%= "PRICE: $#{task.price_per_sqft}," unless task.price_per_sqft.empty? %>
+        <%= "LINE TOTAL: $#{task.line_total}" unless task.line_total.empty? %></li>
+  <% end %>
+</ul>
