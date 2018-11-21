@@ -1,9 +1,9 @@
 <ul>
   <% @tasks.each do |task| %>
-    <li><%= "ROOM: #{task.room}," unless task.room.empty? %>
-        <%= "INFO: #{task.info}," unless task.info.empty? %>
-        <%= "SIZE: #{task.size}," unless task.size.empty? %>
-        <%= "PRICE: $#{task.price_per_sqft}," unless task.price_per_sqft.empty? %>
+    <li><%= "ROOM: #{task.room}" unless task.room.empty? %>
+        <%= "INFO: #{task.info}" unless task.info.empty? %>
+        <%= "SIZE: #{task.size}" unless task.size.empty? %>
+        <%= "PRICE: $#{task.price_per_sqft}" unless task.price_per_sqft.empty? %>
         <%= "LINE TOTAL: $#{task.line_total}" unless task.line_total.empty? %>--- <%= link_to "Remove Line", "/tasks/#{ task.id }", method: :delete %></li>
   <% end %>
 </ul>
@@ -20,7 +20,7 @@
 </div>
 <br>
 <div>
-  <strong>TOTAL: <%= @tasks.total_price %></strong>
+  <strong>TOTAL: $<%= @line_totals %></strong>
 </div>
 <br>
 <div>
