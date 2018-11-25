@@ -12,3 +12,11 @@
 </ul>
 
 <strong><h2>TOTAL: $<%= @invoice.total_price %></h2></strong>
+
+<div>
+  <%= button_to "Edit Job", "/tasks/?invoice=#{params[:id]}", action: :get %>
+</div>
+<br>
+<div>
+  <%= button_to "Finalize Job", "", method: :get %>
+</div>
