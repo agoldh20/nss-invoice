@@ -12,7 +12,7 @@ class TasksController < ApplicationController
     if customer
       @tasks = Task.where(customer_id: customer) 
     end
-    @line_totals = Task.where(invoice_id: 1).pluck(:line_total).map {|total| total.to_i}.reduce(:+)
+    @line_totals = Task.where(invoice_id: invoice).pluck(:line_total).map {|total| total.to_i}.reduce(:+)
   end
 
   def new

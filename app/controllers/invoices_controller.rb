@@ -32,6 +32,15 @@ class InvoicesController < ApplicationController
     @invoice = Invoice.find(params[:id])
   end
 
+  def pdf
+    @invoice = Invoice.find(params[:id])
+    pdf = @invoice.build_invoice_pdf
+    send_data pdf.render,
+        filename: "export.pdf",
+        type: "application/pdf",
+        disposition: "inline"
+  end
+
   def edit
     @invoice = Invoice.find(params[:id])
   end
@@ -42,5 +51,8 @@ class InvoicesController < ApplicationController
 
   def destroy
     @invoice = Invoice.find(params[:id])
+    @invoice.destroy
+
+    redirect_to "/invoices/?customer=#{@invoice.customer_id}&status=open"
   end
 end

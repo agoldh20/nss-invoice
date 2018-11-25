@@ -18,5 +18,5 @@
 </div>
 <br>
 <div>
-  <%= button_to "Finalize Job", "", method: :get %>
+  <%= button_to "Finalize Job", "/invoices/#{@invoice.id}/pdf", method: :get %>
 </div>
