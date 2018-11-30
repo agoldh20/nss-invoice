@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get '/' => 'customers@index'
+
   get '/customers' => 'customers#index'
   get '/customers/new' => 'customers#new'
   post '/customers' => 'customers#create'
@@ -23,4 +25,7 @@ Rails.application.routes.draw do
   patch '/user/:id/edit' => 'user#edit'
   delete '/user' => 'user#destroy'
 
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
+  delete '/logout' => 'sessions#destroy'
 end
