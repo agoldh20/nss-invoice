@@ -11,7 +11,7 @@
 
   <body>
     <div>
-      <strong><h2><%= "Logged In As: #{user.email}" if current_user %></h2></strong>
+      <strong><h2><%= "Logged In As: #{current_user.email}" if current_user %></h2></strong>
       <a href="/customers">Customers</a>
     </div>
     <br>
