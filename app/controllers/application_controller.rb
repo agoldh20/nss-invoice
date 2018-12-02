@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   def current_user
     @current_user ||= User.find_by(sessions[:user_id]) if sessions[:user_id]
   end
-  heler_method :current_user
+  helper_method :current_user
 
   def authenticate_user!
     redirect_to '/login' unless current_user
