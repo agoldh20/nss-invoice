@@ -1,1 +1,22 @@
-new.html.erb
+<h1>New User</h1>
+
+<%= form_tag "/users", method: :post do %>
+  <div>
+    <input type="text" name="first_name" placeholder="First Name">
+  </div>  
+  <div>
+    <input type="text" name="last_name" placeholder="Last Name">
+  </div>  
+  <div>
+    <input type="text" name="email" placeholder="Email">
+  </div>  
+  <div>
+    <input type="text" name="password" placeholder="Password">
+  </div>  
+  <div>
+    <input type="text" name="password_confirmation" placeholder="Confirm Password">
+  </div>
+  <div>
+    <input type="submit" Value="Create User">
+  </div>
+<% end %>
